@@ -7,8 +7,8 @@ const swaggerJSDoc = require('swagger-jsdoc');
 const options = {
     swaggerDefinition: {
         info: {
-            title: 'Swagger UI REST API Boilerplate', // Title (required)
-            description: "Boilerplate to init a REST API project with expressJS, JWT authentication, bcrypt, swagger-express-UI and swagger-jsdoc",
+            title: 'Node Express Swagger UI REST API Template', // Title (required)
+            description: "A boilerplate to init a REST API project with expressJS, JWT authentication, bcrypt, swagger-express-UI and swagger-jsdoc",
             contact: {
                 name: "Emiliano Noli"
             },
