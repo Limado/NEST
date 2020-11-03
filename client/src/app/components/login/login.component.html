@@ -1,0 +1,19 @@
+<div class="content">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group">
+            <h3 class="text-center">Ingreso a Logs viewer</h3>
+            <div class="form-group">
+                <input type="name" class="form-control" formControlName="name" placeholder="Nombre de usuario">
+                <div *ngIf="form.get('name').errors">
+                    <small *ngIf="form.get('email').hasError('required')">El nombre es obligatorio.</small>
+                </div>
+            </div>
+            <input type="password" class="form-control" formControlName="password" placeholder="Contraseña">
+            <div *ngIf="form.get('password').errors && form.get('password').dirty">
+                <small *ngIf="form.get('password').hasError('required')">La contraseña es obligatoria.</small>
+            </div>
+        </div>
+        <span class="text-danger btn-block text-center " *ngIf="response.error">{{response.message}}</span>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-block">Ingresar</button>
+    </form>
+</div>
