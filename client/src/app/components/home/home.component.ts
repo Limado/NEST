@@ -21,13 +21,13 @@ export class HomeComponent implements OnInit {
     this.type = type;
     switch (this.type) {
       case "console":
-        this.type = "Logs de consola";
+        this.type = "Console logs";
         break;
       case "error":
-        this.type = "Logs de errores";
+        this.type = "Error logs";
         break;
       case "response":
-        this.type = "Logs de api response";
+        this.type = "Api response logs";
         break;
     }
 
@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit {
         } else {
           alert(resp.message);
         }
-
       } else {
         console.log("Llamando a la api.", resp);
         this.files = resp.data;
