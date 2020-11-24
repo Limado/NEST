@@ -25,6 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'client')));
 
 app.use('/', indexRouter);
+app.use('/login', indexRouter);
 app.use('/api', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/docs', swaggerRouter);
