@@ -4,6 +4,8 @@ var router = express.Router();
 const swaggerUi = require('swagger-ui-express');
 const swaggerJSDoc = require('swagger-jsdoc');
 
+const siteConfig = require('../modules/Config');
+
 const options = {
     swaggerDefinition: {
         info: {
@@ -14,7 +16,7 @@ const options = {
             },
             version: '1.0.0', // Versión (required)
         },
-        servers: ["http://localhost:3000"],
+        servers: ["http://localhost:" + siteConfig.serverPort.http],
         securityDefinitions: {
             jwt: {
                 type: "apiKey",
@@ -29,7 +31,7 @@ const options = {
         ],
     },
     // Path to the API docs
-    apis: ['./routes/index.js','./routes/users.js'],
+    apis: [siteConfig.path.root + 'routes/index.js', siteConfig.path.root + 'routes/users.js'],
 };
 
 
