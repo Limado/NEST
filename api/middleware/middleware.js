@@ -7,7 +7,7 @@ async function verifyToken(req, res, next) {
 
     jwt.verify(req.headers['x-access-header'], req.app.get('secretKey'), function (err, decoded) {
         if (err) {
-            neoLogger.log("Error verifying token", error.message);
+            neoLogger.log("Error verifying token", err.message);
             res.status(403).json({ error: true, message: err.message })
         } else {
             req.body.userToken = decoded
